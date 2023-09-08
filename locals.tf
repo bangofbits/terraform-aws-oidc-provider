@@ -44,8 +44,10 @@ locals {
       issuer_uri           = "https://gitlab.com"
       openid_configuration = "https://gitlab.com/.well-known/openid-configuration"
       default_attribute_condition = tolist([
-        variable = "gitlab:aud"
-        value = ["sts.amazonaws.com"]
+        {
+          variable = "gitlab:aud"
+          value    = ["sts.amazonaws.com"]
+        }
       ])
       _merged_attribute_condition = merge(default_attribute_condition, attribute_condition)
     }

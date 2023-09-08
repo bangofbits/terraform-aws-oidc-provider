@@ -31,7 +31,7 @@ data "aws_iam_policy_document" "oidc_assume_role" {
 resource "aws_iam_role_policy_attachment" "policy-arns" {
   for_each   = local.identity_providers
   role       = aws_iam_role.this[each.key].name
-  policy_arn = each.value.policy_arn ? "" : local.default_policy_arn 
+  policy_arn = each.value.policy_arn ? "" : local.default_policy_arn
 }
 
 # Add actions missing from arn:aws:iam::aws:policy/ReadOnlyAccess
@@ -52,7 +52,7 @@ resource "aws_iam_role_policy_attachment" "additional-permissions" {
 }
 
 data "aws_iam_policy_document" "additional-permissions" {
-  for_each = local.identity_providers
+  for_each                = local.identity_providers
   source_policy_documents = each.value.policy_jsons
 }
 

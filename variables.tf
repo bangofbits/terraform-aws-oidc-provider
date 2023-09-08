@@ -5,13 +5,13 @@ variable "federated_identity_providers" {
       variable = string
       values   = list(string)
     }))
-    issuer     = string
-    issuer_uri = string
-    tags       = map(string)
-    policy_arn = list(string)
+    issuer       = string
+    issuer_uri   = string
+    tags         = map(string)
+    policy_arn   = list(string)
     policy_jsons = list(string)
   }))
-  
+
   default  = {}
   nullable = false
 
