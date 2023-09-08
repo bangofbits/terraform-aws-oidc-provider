@@ -5,7 +5,7 @@
 
 
 #### Example:
-´´´
+```
 module "aws_oidc" {
   source                = "github.com/coactdev/terraform-aws-oidc-provider"
   federated_identity_providers = {
@@ -25,7 +25,7 @@ module "aws_oidc" {
     }
   }
 }
-´´´
+```
 
 ---
 1. https://docs.gitlab.com/ee/ci/yaml/index.html#id_tokens
