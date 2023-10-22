@@ -21,6 +21,7 @@ locals {
         principal_tpl    = "principal://iam.googleapis.com/%s/subject/repo:%s:ref:refs/heads/%s"
         principalset_tpl = "principalSet://iam.googleapis.com/%s/attribute.repository/%s"
         openid_configuration = "https://token.actions.githubusercontent.com/.well-known/openid-configuration"
+        known_fingerprints = [ "1c58a3a8518e8759bf075b76b750d4f2df264fcd", "6938fd4d98bab03faadb97b34396831e3780aea1" ]
       }*/
     # https://docs.gitlab.com/ee/ci/cloud_services/index.html#how-it-works
     gitlab = {
@@ -43,6 +44,7 @@ locals {
       allowed_audiences    = ["https://gitlab.com"]
       issuer_uri           = "https://gitlab.com"
       openid_configuration = "https://gitlab.com/.well-known/openid-configuration"
+      known_fingerprints = []
       default_attribute_condition = tolist([
         {
           variable = "gitlab:aud"
