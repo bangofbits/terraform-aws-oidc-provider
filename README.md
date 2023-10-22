@@ -20,6 +20,7 @@ module "aws_oidc" {
         }
       ])
       tags       = { "stage" = "bootstrap" }
+      issuer     = "gitlab"
       policy_arn = ""
       policy_jsons = data.aws_iam_policy_document.terraform_organisation_management_policy.json
     }

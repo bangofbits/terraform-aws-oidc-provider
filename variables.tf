@@ -6,7 +6,6 @@ variable "federated_identity_providers" {
       values   = list(string)
     }))
     issuer       = string
-    issuer_uri   = string
     openid_configuration = string
     known_fingerprints = list(string)
     tags         = map(string)
